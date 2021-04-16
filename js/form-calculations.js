@@ -1,11 +1,6 @@
+"use strict"; 
+
 const pvmNorm = 21 / 100;
-
-function calculateTaxableAmount(){
-    let productPrice =  parseInt( document.getElementById("product_price").value);
-    let transferPriceBeforeEu = parseInt( document.getElementById("transfer_price_before_eu").value);
-
-    return  productPrice + transferPriceBeforeEu;
-}
 
 function calculateCustomsPrice(){
     let taxableAmount = parseInt(calculateTaxableAmount());
@@ -16,17 +11,48 @@ function calculateCustomsPrice(){
     return Number((customsPrice).toFixed(2)); 
 }
 
+function calculateTaxableAmount(){
+    let productPrice =  parseInt( document.getElementById("product_price").value);
+    let transferPriceBeforeEu = parseInt( document.getElementById("transfer_price_before_eu").value);
+
+    return  productPrice + transferPriceBeforeEu;
+}
+
+
 function calculateCustomsProcent(){
     let customsProcent = document.getElementById("customs_procent").value;
     
     return customsProcent / 100;  
 }
 
-function displayCustomsPrice(){
-    let customsPriceContainer = document.getElementById("customs_price");
+function calculateTotalPrice(){
+    let pvmPrice = calculatePvmPrice();
+    let customsPrice = calculateCustomsPrice();
 
-    customsPriceContainer.innerText = calculateCustomsPrice();
+    return Number((pvmPrice + customsPrice).toFixed(2)); 
 }
+
+function calculatePvmPrice(){
+    let pvmGround = calculatePvmGround();
+
+    return Number((pvmGround * pvmNorm).toFixed(2)); 
+}
+
+function calculatePvmGround(){
+    let customsValue = calculateCustomsValue();
+    let transferPriceInEu = parseInt( document.getElementById("transfer_price_in_eu").value);
+    let otherCosts = parseInt(document.getElementById("other_costs").value);
+
+    return  customsValue + transferPriceInEu + otherCosts;
+}
+
+function calculateCustomsValue(){
+    let taxableAmount = calculateTaxableAmount();
+    let  customsPrice = calculateCustomsPrice();
+
+    return taxableAmount + customsPrice  ;
+}
+
 
 function displayPvmPrice(){
     let pvmPriceContainer = document.getElementById("pvm_price");
@@ -40,30 +66,8 @@ function displayTotalPrice(){
     totalPriceContainer.innerText = calculateTotalPrice();
 }
 
-function calculateTotalPrice(){
-    let pvmPrice = calculatePvmPrice();
-    let customsPrice = calculateCustomsPrice();
+function displayCustomsPrice(){
+    let customsPriceContainer = document.getElementById("customs_price");
 
-    return Number((pvmPrice + customsPrice).toFixed(2)); 
-}
-
-function calculateCustomsValue(){
-    let taxableAmount = calculateTaxableAmount();
-    let  customsPrice = calculateCustomsPrice();
-
-    return taxableAmount + customsPrice  ;
-}
-
-function calculatePvmGround(){
-    let customsValue = calculateCustomsValue();
-    let transferPriceInEu = parseInt( document.getElementById("transfer_price_in_eu").value);
-    let otherCosts = parseInt(document.getElementById("other_costs").value);
-
-    return  customsValue + transferPriceInEu + otherCosts;
-}
-
-function calculatePvmPrice(){
-    let pvmGround = calculatePvmGround();
-
-    return Number((pvmGround * pvmNorm).toFixed(2)); 
+    customsPriceContainer.innerText = calculateCustomsPrice();
 }
