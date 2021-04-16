@@ -71,3 +71,9 @@ function displayCustomsPrice(){
 
     customsPriceContainer.innerText = calculateCustomsPrice();
 }
+
+function displayFormResults(){
+    displayCustomsPrice(), 
+    displayPvmPrice(), 
+    displayTotalPrice()
+}
