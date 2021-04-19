@@ -10,3 +10,8 @@
 .form__help-text__content--expanded .form__help-text__content {
   display: block;
 }
+
+label.error {
+  font-weight: 300;
+  color: red;
+}
