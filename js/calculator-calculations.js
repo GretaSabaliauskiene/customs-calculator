@@ -41,7 +41,7 @@ function calculatePvmPrice(){
 function calculatePvmGround(){
     let customsValue = calculateCustomsValue();
     let transferPriceInEu = parseInt( document.getElementById("transfer_price_in_eu").value);
-    let otherCosts = parseInt(document.getElementById("other_costs").value);
+    let otherCosts = parseInt(document.getElementById("other_costs").value) || 0 ;
 
     return  customsValue + transferPriceInEu + otherCosts;
 }
