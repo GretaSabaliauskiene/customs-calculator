@@ -1,0 +1,12 @@
+.form__result {
+  margin-left: 2rem;
+  font-size: 2rem;
+}
+
+.form__help-text__content {
+  display: none;
+}
+
+.form__help-text__content--expanded .form__help-text__content {
+  display: block;
+}
