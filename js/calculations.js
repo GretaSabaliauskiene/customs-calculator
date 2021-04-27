@@ -10,7 +10,6 @@ function calculateCustomsPrice() {
 
   return Number(customsPrice.toFixed(2));
 }
-
 function calculateTaxableAmount() {
   let productPrice = parseInt(document.getElementById("product_price").value);
   let transferPriceBeforeEu = parseInt(
@@ -74,26 +73,11 @@ function displayCustomsPrice() {
   customsPriceContainer.innerText = calculateCustomsPrice();
 }
 
-function checkEmpty() {
-  let $inputs = $(
-    "#product_price,#transfer_price_before_eu, #customs_procent,#transfer_price_in_eu  "
-  );
-
-  // filter over the empty inputs
-
-  return (
-    $inputs.filter(function () {
-      return !$.trim(this.value);
-    }).length === 0
-  );
-}
-
 function displayCalculatorResults() {
-  if (checkEmpty()) {
+  let validator = $("#customs-calculator-form").validate();
+  if (validator.form()) {
     displayCustomsPrice();
     displayPvmPrice();
     displayTotalPrice();
-  } else {
-    console.log("tuscia");
   }
 }

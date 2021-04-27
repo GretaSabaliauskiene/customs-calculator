@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
     <title>customs-calculator</title>
+    
   </head>
   <body>
       <section class="calculator container">
@@ -19,13 +20,13 @@
                 </div>
             </div>    
               <form id="customs-calculator-form">
-                <div class="form-group mt-4 pt-3">
-                  <label for="product_price ">Prekės kaina *
+                <div class="form-group mt-4 pt-4">
+                  <label class="mb-2" for="product_price ">Prekės kaina *
                   </label>
                   <input
                     id="product_price"
                     name="product_price"
-                    class="form-control"
+                    class="form-control input-lg"
                     type="number"
                     autofocus
                     minlength="1"
@@ -33,8 +34,8 @@
                     required
                   />
                 </div>
-                <div class="form-group mt-4 pb-3 ">
-                  <label for="transfer_price_before_eu ">Atgabenimo iki EU sienos kaina *
+                <div class="form-group mt-4 pb-4 ">
+                  <label class="mb-2"  for="transfer_price_before_eu ">Atgabenimo iki ES sienos kaina *
                   </label>
                   <input
                     name="transfer_price_before_eu"
@@ -47,11 +48,11 @@
                     required
                   />
                 </div>
-                <div class="form-group pb-3">
-                  <label for="customs_procent">Muito norma (procentais) *</label>
+                <div class="form-group pb-4">
+                  <label class="mb-2"  for="customs_procent">Muito norma (procentais) *</label>
                   <svg 
                   id="calculator__info-icon"
-                  xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                  xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#009c79" class="bi bi-info-circle" viewBox="0 0 16 16">
                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                     <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
                   </svg>         
@@ -66,15 +67,16 @@
                   />
                   <div id="calculator__help-text">
                    <div class="calculator__help-text__content">
-                    <small class="text-muted">
-                      Nežinantiems muito normos skambinti:<a class="text-muted"
-                      href="tel:861124074">861124074</a>
-                    </small>
+                    <div style="background-color: #009c79; color: white;" class="alert alert-success" role="alert">
+                      Nežinantiems muito normos skambinti:  
+                      <a class="calculator__help-text__contact" href="tel:861124074">861124074</a>                    
+                    </div>
+                    
                    </div>
                   </div>
                 </div>
-                <div class="form-group pb-3">
-                  <label for="transfer_price_in_eu"
+                <div class="form-group pb-4">
+                  <label class="mb-2"  for="transfer_price_in_eu"
                     >Atgabenimo nuo EU sienos iki išmuitinimo vietos kaina *
                   </label>
                   <input
@@ -88,7 +90,7 @@
                   />
                 </div>
                 <div class="form-group pb-5">
-                  <label for="other_costs">Kitos išlaidos iki išmuitinimo (pvz.: muitinės tarpininko, savdėliavimo, prekių patikros ir pan.)</label>
+                  <label class="mb-2"   for="other_costs">Kitos išlaidos iki išmuitinimo (pvz.: muitinės tarpininko, savdėliavimo, prekių patikros ir pan.)</label>
                   <input
                     name="other_costs"
                     id="other_costs"
@@ -100,34 +102,29 @@
                 </div>
             <div class="row ">
               <div class="col-3">
-                <button id="calculator__button" type="submit" class="btn btn-dark" onclick="displayCalculatorResults()">Skaičiuoti muitą</button>
+                <button id="calculator__button" type="submit" onclick="displayCalculatorResults()" class="btn btn-dark p-lg-3" >Skaičiuoti muitą</button>
               </div>
               <div class="col-3 d-flex align-items-center">
-                  <h4>Muito suma:</h4>
+                  <h4 style="font-weight: bold;">Muito suma:</h4>
                   <span class="calculator__result" id="customs_price"></span>
               </div>
               <div class="col-3 d-flex align-items-center">
-                  <h4>PVM suma:</h4>
+                  <h4 style="font-weight: bold;"">PVM suma:</h4>
                   <span class="calculator__result"  id="pvm_price"></span>
               </div>
               <div class="col-3 d-flex align-items-center">
-                  <h4>Viso:</h4>
+                  <h4 style="font-weight: bold;">Viso:</h4>
                   <span class="calculator__result"  id="total_price"></span>
               </div>
             </form>
           </div>
       </section>
     </div>
-
-
-
-    
   </body>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
-    <script src="./js/calculator-calculations.js"></script>
-    <script src="./js/calculator-help.js"></script>
-    <script src="./js/calculator-validation.js"></script>
-    <script src="./js/disabled-button.js"></script>
+    <script  src="./js/calculations.js"></script>
+    <script  src="./js/info-field.js"></script>
+    <script src="./js/validation.js"></script>
+    <script src="./js/disabled-submit.js"></script>
 </html>
