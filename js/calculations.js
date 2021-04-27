@@ -73,11 +73,11 @@ function displayCustomsPrice() {
   customsPriceContainer.innerText = calculateCustomsPrice();
 }
 
-function displayCalculatorResults() {
+window.displayCalculatorResults = function displayCalculatorResults() {
   let validator = $("#customs-calculator-form").validate();
   if (validator.form()) {
     displayCustomsPrice();
     displayPvmPrice();
     displayTotalPrice();
   }
-}
+};
