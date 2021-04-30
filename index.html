@@ -48,14 +48,18 @@
                     required
                   />
                 </div>
-                <div class="form-group pb-4">
+                      <div class="form-group pb-4">
                   <label class="mb-2"  for="customs_procent">Muito norma (procentais) *</label>
-                  <svg 
-                  id="calculator__info-icon"
-                  xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#009c79" class="bi bi-info-circle" viewBox="0 0 16 16">
-                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                    <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-                  </svg>         
+                  <div class="info-popup" id="info-popup" onclick="expandPopup()"> 
+                    <svg style="margin-left: 0.5rem;" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                      <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                    </svg>                           
+                    <span class="popuptext" id="myPopup">
+                        Nežinote muito normos? Skambinkite: <a href="tel:861124074">861124074</a>   
+                      </span>
+                  </div>  
+                
                   <input
                     name="customs_procent"
                     id="customs_procent"
@@ -65,15 +69,13 @@
                     maxlength="10"
                     required
                   />
-                  <div id="calculator__help-text">
-                   <div class="calculator__help-text__content">
-                    <div style="background-color: #009c79; color: white;" class="alert alert-success" role="alert">
+                  <!-- <div id="calculator__info-popup">
+                    <div class="calculator__info-popup__content">
                       Nežinantiems muito normos skambinti:  
-                      <a class="calculator__help-text__contact" href="tel:861124074">861124074</a>                    
-                    </div>
-                    
-                   </div>
-                  </div>
+                      <a class="calculator__info-popup__content__contact" href="tel:861124074">861124074</a>                    
+                   </div> 
+                  </div> -->
+               
                 </div>
                 <div class="form-group pb-4">
                   <label class="mb-2"  for="transfer_price_in_eu"
@@ -116,13 +118,14 @@
                   <h4 style="font-weight: bold;">Viso:</h4>
                   <span class="calculator__result"  id="total_price"></span>
               </div>
+            
             </form>
-          </div>
       </section>
     </div>
   </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script src="bootstrap.bundle.min.js / bootstrap.bundle.js"></script>  
     <script  src="./js/calculations.js"></script>
     <script  src="./js/info-field.js"></script>
     <script src="./js/validation.js"></script>

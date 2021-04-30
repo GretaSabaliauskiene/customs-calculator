@@ -3,24 +3,6 @@
   font-size: 2rem;
 }
 
-.calculator__help-text__content {
-  display: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: white;
-}
-.calculator__help-text__contact {
-  color: black;
-}
-
-.calculator__help-text__contact:hover {
-  color: white;
-}
-
-.calculator__help-text__content--expanded .calculator__help-text__content {
-  display: block;
-}
-
 label.error {
   font-weight: 300;
   color: red;
@@ -28,19 +10,68 @@ label.error {
   font-size: 0.9rem;
 }
 
-/* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
 }
 
-#calculator__info-icon {
+.info-popup {
+  position: relative;
+  display: inline-block;
   cursor: pointer;
-  margin-left: 1rem;
+}
+
+.popuptext {
+  visibility: hidden;
+  font-size: 1rem;
+  width: 25rem;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 10px 5px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.info-popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 19%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.show .bi-info-circle {
+  fill: #009c79;
+  transition: 0.5s;
+}
+.show .popuptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media screen and (max-width: 900px) {
+  .popuptext {
+    font-size: 0.7rem;
+    width: 17rem;
+    margin-left: -90px;
+  }
+  .info-popup .popuptext::after {
+    top: 100%;
+    left: 40%;
+  }
 }
