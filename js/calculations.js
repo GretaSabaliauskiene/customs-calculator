@@ -56,21 +56,18 @@ function calculateCustomsValue() {
 }
 
 function displayPvmPrice() {
-  let pvmPriceContainer = document.getElementById("pvm_price");
-
-  pvmPriceContainer.innerText = calculatePvmPrice();
+  document.getElementById("pvm_price").innerHTML =
+    calculatePvmPrice() + "<span style='color: #009c79;'> €</span>";
 }
 
 function displayTotalPrice() {
-  let totalPriceContainer = document.getElementById("total_price");
-
-  totalPriceContainer.innerText = calculateTotalPrice();
+  document.getElementById("total_price").innerHTML =
+    calculateTotalPrice() + "<span style='color: #009c79;'> €</span>";
 }
 
 function displayCustomsPrice() {
-  let customsPriceContainer = document.getElementById("customs_price");
-
-  customsPriceContainer.innerText = calculateCustomsPrice();
+  document.getElementById("customs_price").innerHTML =
+    calculateCustomsPrice() + "<span style='color: #009c79;'> €</span>";
 }
 
 window.displayCalculatorResults = function displayCalculatorResults() {

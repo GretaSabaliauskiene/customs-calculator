@@ -1,6 +1,45 @@
+.calculator__title {
+  font-family: "Roboto Slab", serif;
+}
+.calculator__results__heading {
+  font-family: "Roboto Slab", serif;
+}
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0;
+  font-weight: 700;
+}
+.calculator__results__heading {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.calculator__results {
+  padding: 1rem 1rem 0rem;
+}
+
+h1 {
+  padding: 1rem 0;
+}
+#customs_price,
+#pvm_price,
+#total_price {
+  font-weight: 700;
+}
+
 .calculator__result {
-  margin-left: 2rem;
   font-size: 2rem;
+  font-weight: 700;
 }
 
 label.error {
@@ -74,4 +113,18 @@ input[type="number"] {
     top: 100%;
     left: 40%;
   }
+}
+
+#calculator__button {
+  width: 100%;
+}
+
+.calculator__results {
+}
+
+.euro {
+  color: black;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: "Roboto Slab", serif;
 }
