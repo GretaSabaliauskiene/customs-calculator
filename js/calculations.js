@@ -70,11 +70,23 @@ function displayCustomsPrice() {
     calculateCustomsPrice() + "<span style='color: #009c79;'> €</span>";
 }
 
-window.displayCalculatorResults = function displayCalculatorResults() {
+jQuery("#calculator__button").click(function () {
+  $(this).data("clicked", true);
   let validator = $("#customs-calculator-form").validate();
   if (validator.form()) {
     displayCustomsPrice();
     displayPvmPrice();
     displayTotalPrice();
   }
-};
+});
+
+$("input").change(function () {
+  if (jQuery("#calculator__button").data("clicked")) {
+    let validator = $("#customs-calculator-form").validate();
+    if (validator.form()) {
+      displayCustomsPrice();
+      displayPvmPrice();
+      displayTotalPrice();
+    }
+  }
+});
