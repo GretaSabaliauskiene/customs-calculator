@@ -78,6 +78,9 @@ jQuery("#calculator__button").click(function () {
     displayPvmPrice();
     displayTotalPrice();
   }
+  if ($("#customs_price, #pvm_price, #total_price ").height() >= 96) {
+    $("#customs_price,  #pvm_price, #total_price").css("fontSize", 12);
+  }
 });
 
 $("input").change(function () {
