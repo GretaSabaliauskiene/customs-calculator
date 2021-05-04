@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $("#customs-calculator-form").validate({
+  $("#calculator__form").validate({
     rules: {
       product_price: {
         required: true,

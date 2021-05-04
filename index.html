@@ -21,7 +21,7 @@
                     <h1 class="calculator__title">Importo mokesčių skaičiuoklė</h1>
                 </div>
             </div>    
-              <form id="customs-calculator-form">
+              <form id="calculator__form">
                 <div class="form-group mt-4 pt-4">
                   <label class="mb-2" for="product_price ">Prekės kaina *
                   </label>
@@ -37,7 +37,7 @@
                   />
                 </div>
                 <div class="form-group mt-4 pb-4 ">
-                  <label class="mb-2"  for="transfer_price_before_eu ">Atgabenimo iki ES sienos kaina *
+                  <label class="mb-2" for="transfer_price_before_eu ">Atgabenimo iki ES sienos kaina *
                   </label>
                   <input
                     name="transfer_price_before_eu"
@@ -50,18 +50,17 @@
                     required
                   />
                 </div>
-                      <div class="form-group pb-4">
+                <div class="form-group pb-4">
                   <label class="mb-2"  for="customs_procent">Muito norma (procentais) *</label>
                   <div class="info-popup" id="info-popup" onclick="expandPopup()"> 
                     <svg style="margin-left: 0.5rem;" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
                       <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                       <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
                     </svg>                           
-                    <span class="popuptext" id="myPopup">
+                    <span class="info-popup__text">
                         Nežinote muito normos? Skambinkite: <a style="color: #4fa1dc;" href="tel:+37061124074">+37061124074</a>   
                       </span>
-                  </div>  
-                
+                </div> 
                   <input
                     name="customs_procent"
                     id="customs_procent"
@@ -97,7 +96,7 @@
                     maxlength="10"
                   >
                 </div>
-            <div class="row  justify-content-center">
+            <div class="row justify-content-center">
               <div class="col-8">
                 <button id="calculator__button" type="submit" class="btn btn-dark w-100" >Skaičiuoti</button>
               </div>

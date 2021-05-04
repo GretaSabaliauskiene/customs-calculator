@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $("#customs-calculator-form").submit(function (e) {
+  $("#calculator__form").submit(function (e) {
     e.preventDefault();
   });
 });

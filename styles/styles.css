@@ -46,7 +46,7 @@ input[type="number"] {
   cursor: pointer;
 }
 
-.popuptext {
+.info-popup__text {
   visibility: hidden;
   font-size: 1rem;
   width: 25rem;
@@ -64,7 +64,7 @@ input[type="number"] {
   transition: opacity 0.3s;
 }
 
-.info-popup .popuptext::after {
+.info-popup .info-popup__text::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -80,18 +80,18 @@ input[type="number"] {
   transition: 0.5s;
 }
 
-.show .popuptext {
+.show .info-popup__text {
   visibility: visible;
   opacity: 1;
 }
 
 @media screen and (max-width: 540px) {
-  .popuptext {
+  .info-popup__text {
     left: -30px;
     font-size: 0.7rem;
     width: 17rem;
   }
-  .info-popup .popuptext::after {
+  .info-popup .info-popup__text::after {
     top: 100%;
     left: 32%;
   }

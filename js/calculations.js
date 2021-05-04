@@ -70,26 +70,30 @@ function displayCustomsPrice() {
     calculateCustomsPrice() + "<span style='color: #009c79;'> €</span>";
 }
 
-jQuery("#calculator__button").click(function () {
-  $(this).data("clicked", true);
-  let validator = $("#customs-calculator-form").validate();
+function checkAndDisplayResults() {
+  let validator = $("#calculator__form").validate();
   if (validator.form()) {
     displayCustomsPrice();
     displayPvmPrice();
     displayTotalPrice();
   }
+}
+
+function reduceFontSizeIfDoesntFit() {
   if ($("#customs_price, #pvm_price, #total_price ").height() >= 96) {
     $("#customs_price,  #pvm_price, #total_price").css("fontSize", 12);
   }
+}
+
+jQuery("#calculator__button").click(function () {
+  $(this).data("clicked", true);
+  checkAndDisplayResults();
+  reduceFontSizeIfDoesntFit();
 });
 
 $("input").change(function () {
   if (jQuery("#calculator__button").data("clicked")) {
-    let validator = $("#customs-calculator-form").validate();
-    if (validator.form()) {
-      displayCustomsPrice();
-      displayPvmPrice();
-      displayTotalPrice();
-    }
+    checkAndDisplayResults();
+    reduceFontSizeIfDoesntFit();
   }
 });
