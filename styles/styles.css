@@ -1,24 +1,8 @@
-.calculator__title {
-  font-family: "Roboto Slab", serif;
-}
+.calculator__title,
 .calculator__results__heading {
   font-family: "Roboto Slab", serif;
 }
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-bottom: 0;
-  font-weight: 700;
-}
+
 .calculator__results__heading {
   font-size: 1rem;
   font-weight: 400;
@@ -28,12 +12,9 @@ h6 {
   padding: 1rem 1rem 0rem;
 }
 
-h1 {
+.calculator__title {
   padding: 1rem 0;
-}
-#customs_price,
-#pvm_price,
-#total_price {
+  margin-bottom: 0;
   font-weight: 700;
 }
 
@@ -72,7 +53,7 @@ input[type="number"] {
   background-color: #555;
   color: #fff;
   text-align: center;
-  padding: 10px 5px;
+  padding: 10px 6px;
   border-radius: 6px;
   position: absolute;
   z-index: 1;
@@ -98,33 +79,27 @@ input[type="number"] {
   fill: #009c79;
   transition: 0.5s;
 }
+
 .show .popuptext {
   visibility: visible;
   opacity: 1;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 540px) {
   .popuptext {
+    left: -30px;
     font-size: 0.7rem;
     width: 17rem;
-    margin-left: -90px;
   }
   .info-popup .popuptext::after {
     top: 100%;
-    left: 40%;
+    left: 32%;
   }
 }
 
-#calculator__button {
-  width: 100%;
-}
-
-.calculator__results {
-}
-
-.euro {
-  color: black;
-  font-size: 2rem;
-  font-weight: 700;
-  font-family: "Roboto Slab", serif;
-}
+/* @media (min-width: 992px) {
+  .calculator .col-lg-2 {
+    flex: 0 0 auto;
+    width: 13.666667%;
+  }
+} */
